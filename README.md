@@ -1,1 +1,2 @@
 # Project-File
+This is my first task as a part of GRIPMAR21 under The Sparks Foundation. In this project, I have successfully predicted 'The percentage of an student based on the no. of study hours' using supervised machine learning algorithm i.e. Simple Linear Regression. With a 'Mean Absolute Accuracy' of 85% it can be assumed that if a student studies 9.25 hours/day he can score 92.82% in exam. I have used R studio for building my predictive model.
