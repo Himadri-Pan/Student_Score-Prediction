@@ -1,3 +1,9 @@
+
+##The Sparks Foundation
+##HIMADRI PAN
+
+
+
 ##Importing Data From Web
 student_study=read.csv(url("http://bit.ly/w-data"))
 
@@ -5,7 +11,8 @@ str(student_study)
 
 ##Scatter Plot
 plot(student_study,col='red',main=paste("Score Vs. Hour"))
-
+x=lm(Scores ~ Hours, data = student_study)
+y=abline(x,col='blue')
 ###7. Splitting the data into train & test:
 trainingsampleindex=sample(1:nrow(student_study),size=0.7*nrow(student_study))
 traindata=student_study[trainingsampleindex,]
@@ -27,10 +34,10 @@ print(paste("### Median Accuracy of Linear Regression Model is: ",100-median(tes
 
 
 ##What will be predicted score if a student studies for 9.25 hrs/ day?
-incomingdata=data.frame('Hours','Score')
+incomingdata=data.frame(matrix(ncol = 2, nrow = 1))
+b=c("Hours","Score")
+colnames(incomingdata)=b
 incomingdata$Hours=9.25
-incomingdata$X.Hours.=NULL
-incomingdata$X.Score.=NULL
 
-incomingdata$pred_score=predict(model1,incomingdata)
-
+incomingdata$Score=predict(model1,incomingdata)
+incomingdata
